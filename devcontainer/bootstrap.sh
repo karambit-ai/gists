@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 #
 # This script prepares a repository for devcontainer usage.
+#
+# For initial setup, run:
+#
+# ```bash
+# curl https://raw.githubusercontent.com/karambit-ai/gists/main/devcontainer/bootstrap.sh | bash
+# ```
 
 set -eo pipefail
 
@@ -43,5 +49,9 @@ curl -Ls https://api.github.com/repos/karambit-ai/gists/contents/devcontainer | 
 
 # Download the devcontainer configuration and Dockerfile and backup existing
 # ones.
+#
+# NB: These files will overwrite repository-specific customizations. Users
+#     updating a repository by means of this script should take care to compare
+#     the new files with the backed up ones and manually merge any changes.
 dl .devcontainer/devcontainer.json
 dl .devcontainer/Dockerfile

@@ -25,3 +25,13 @@ See:
 
 This `gists` repository contains a model setup for configuring a repository for
 development in devcontainers.
+
+The scripts in `devcontainer/` are meant to be copied into a repository and
+overwritten as needed. Any repository-specific configuration should go into
+`.devcontainer/devcontainer.json` and `.devcontainer/Dockerfile`.
+
+When setting up or updating a new repository, run:
+
+```bash
+curl https://raw.githubusercontent.com/karambit-ai/gists/main/devcontainer/bootstrap.sh | bash
+```
