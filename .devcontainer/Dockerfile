@@ -1,3 +1,5 @@
+# syntax=docker.io/docker/dockerfile-upstream:1.4.3
+
 ARG VARIANT="jammy"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
