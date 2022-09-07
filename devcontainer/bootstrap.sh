@@ -21,9 +21,11 @@ dl() {
   curl -Ls "https://raw.githubusercontent.com/karambit-ai/gists/main/${1}" >"${2}"
 
   # Delete the backup if the sha256sum values match.
-  sha_backup="$(sha256sum "${2}" | awk '{print $1}')"
-  sha_new="$(sha256sum "${backup}" | awk '{print $1}')"
-  [[ "${sha_backup}" == "${sha_new}" ]] && rm "${backup}"
+  if [[ -f "${backup}" ]]; then
+    sha_backup="$(sha256sum "${2}" | awk '{print $1}')"
+    sha_new="$(sha256sum "${backup}" | awk '{print $1}')"
+    [[ "${sha_backup}" == "${sha_new}" ]] && rm "${backup}"
+  fi
 }
 
 # Download curl if not installed.
