@@ -61,6 +61,7 @@ while IFS= read -r line || [ -n "$line" ]; do
   version="${linevars[2]}"
 
   [[ -z "${name}" ]] && continue
+  [[ -z "${source}" ]] && source="-"
   [[ "${source}" = "-" ]] && source="$(asdf_source "${name}")"
   [[ -z "${source}" ]] && {
     echo "[-] Missing source value for package '${name}'"
