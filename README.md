@@ -35,3 +35,10 @@ When setting up or updating a new repository, run:
 ```bash
 curl https://raw.githubusercontent.com/karambit-ai/gists/main/devcontainer/bootstrap.sh | bash
 ```
+
+We additionally recommend that all karambit-ai repositories include the
+following asdf plugins:
+
+- cloudflared
+- github-cli
+- vault

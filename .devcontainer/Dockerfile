@@ -21,5 +21,7 @@ COPY --chown=vscode .tool-versions /home/vscode/.tool-versions
 
 # Install packages using the asdf package manager.
 RUN /tmp/asdf.sh <<EOF
+cloudflared
 github-cli
+vault
 EOF
