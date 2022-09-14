@@ -38,6 +38,7 @@ apt-get -y install --no-install-recommends \
   python3-pip \
   python3-venv \
   ripgrep \
+  rlwrap \
   tmux \
   vim \
   wget \
