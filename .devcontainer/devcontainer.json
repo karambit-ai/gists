@@ -22,6 +22,9 @@
       ],
       "settings": {
         "editor.formatOnSave": true,
+        "shellformat.effectLanguages": [
+          "shellscript"
+        ],
         "[shellscript]": {
           "editor.defaultFormatter": "foxundermoon.shell-format"
         }
