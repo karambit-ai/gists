@@ -27,6 +27,7 @@ apt-get -y install --no-install-recommends \
   curl \
   direnv \
   entr \
+  fzf \
   g++ \
   gcc \
   git \
