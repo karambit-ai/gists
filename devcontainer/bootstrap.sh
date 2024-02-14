@@ -58,3 +58,5 @@ curl -Ls https://api.github.com/repos/karambit-ai/gists/contents/devcontainer | 
 dl .devcontainer/devcontainer.json
 dl .devcontainer/devcontainer.json.tpl
 dl .devcontainer/Dockerfile
+dl .pre-commit-config.yaml
+touch .tool-versions
