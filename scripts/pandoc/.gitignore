@@ -1,0 +1,7 @@
+.direnv/
+*.docx
+*.env*
+!reference.docx
+pagebreak.lua
+generated/*
+!generated/.gitkeep
