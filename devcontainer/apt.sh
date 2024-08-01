@@ -24,6 +24,7 @@ packages=$(</dev/stdin)
 apt update
 # shellcheck disable=2086
 apt-get -y install --no-install-recommends \
+  acl \
   curl \
   direnv \
   entr \
