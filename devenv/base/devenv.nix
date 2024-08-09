@@ -32,4 +32,7 @@
     shellcheck.enable = true;
     trim-trailing-whitespace.enable = true;
   };
+
+  scripts.cf-vault.exec = builtins.readFile (../../. + "/scripts/kaisecure/cf_vault.sh");
+  scripts.kai-login.exec = builtins.readFile (../../. + "/scripts/kaisecure/kai_login.sh");
 }
