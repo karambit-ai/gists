@@ -5,6 +5,7 @@
     curl
     git
   ] ++ lib.optionals (!config.container.isBuilding) [
+    act
     cloudflared
     direnv
     emacs
