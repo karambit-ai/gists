@@ -19,7 +19,7 @@
     ripgrep
     rlwrap
     tmux
-    vault
+    vault-bin
     vim
     wget
   ]);
