@@ -4,7 +4,7 @@
     "context": "..",
     "dockerfile": "Dockerfile",
     "args": {
-      "VARIANT": "ubuntu-22.04"
+      "VARIANT": "ubuntu24.04"
     }
   },
   "features": {

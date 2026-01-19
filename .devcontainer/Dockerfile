@@ -1,7 +1,7 @@
 # syntax=docker.io/docker/dockerfile-upstream:1.4.3
 
-ARG VARIANT="jammy"
-FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
+ARG VARIANT="noble"
+FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
 
 # Install packages using the apt package manager.
 # A list of common packages will be installed along with any packages you list
