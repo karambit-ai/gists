@@ -41,6 +41,7 @@ apt-get -y install --no-install-recommends \
   python3-venv \
   ripgrep \
   rlwrap \
+  rsync \
   tmux \
   vim \
   wget \
