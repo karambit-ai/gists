@@ -56,8 +56,10 @@ curl -Ls https://api.github.com/repos/karambit-ai/gists/contents/devcontainer | 
 #     updating a repository by means of this script should take care to compare
 #     the new files with the backed up ones and manually merge any changes.
 dl .devcontainer/devcontainer.json
+sed -ir "s|karambit-ai/gists|karambit-ai/${PWD##*/}|" .devcontainer/devcontainer.json
 dl .devcontainer/devcontainer.json.tpl
-dl .devcontainer/Dockerfile
+dl .devcontainer/Ubuntu/devcontainer.json
+dl .devcontainer/Ubuntu/Dockerfile
 dl .github/workflows/devcontainer_build.yml
 dl .pre-commit-config.yaml
 touch .tool-versions

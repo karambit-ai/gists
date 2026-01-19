@@ -25,7 +25,7 @@ else
   export VERBOSE=""
 fi
 
-curl "https://api.karambit.ai/v1/files/${FILE_SHA256}/kind/${KIND}" \
+curl "https://api2.karambit.ai/api/v3/files/${FILE_SHA256}/kind/${KIND}" \
   --header "Authorization: Bearer ${KAI_API_KEY}" \
   --max-time 300 \
   --remote-header-name \

@@ -1,6 +1,12 @@
 {
-  "name": "Prebuild",
-  "image": "ghcr.io/karambit-ai/gists/devcontainer",
+  "name": "Ubuntu",
+  "build": {
+    "context": "../..",
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "ubuntu24.04"
+    }
+  },
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "latest"
