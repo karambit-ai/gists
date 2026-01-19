@@ -12,6 +12,7 @@ set -eo pipefail
 
 dl() {
   [[ -z "${2}" ]] && set -- "${1}" "${1}"
+  mkdir -p "$(dirname "${2}")"
 
   # Download and backup a file from the gists repository.
   echo "[+] Downloading ${1} to ${2}..."
