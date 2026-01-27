@@ -16,9 +16,7 @@ EOF
 # Install common shell hooks (e.g. asdf, completion).
 RUN curl -fsSL https://raw.githubusercontent.com/karambit-ai/gists/main/devcontainer/hooks.sh | bash -
 
-USER vscode
-
-COPY --chown=vscode .tool-versions /home/vscode/.tool-versions
+COPY .tool-versions /root/.tool-versions
 
 # Install packages using the asdf package manager.
 RUN curl -fsSL https://raw.githubusercontent.com/karambit-ai/gists/main/devcontainer/asdf.sh > /tmp/asdf.sh \
@@ -27,3 +25,5 @@ cloudflared
 github-cli
 vault
 EOF
+
+USER vscode
