@@ -57,5 +57,4 @@ jobs:
       - name: Check asdf availability
         run: |
           gh repo view
-        # NB: The below adds --noprifle and --norc which we don't want.
-        # shell: bash
+        shell: bash -ileo pipefail {0}
