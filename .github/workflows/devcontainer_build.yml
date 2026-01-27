@@ -10,6 +10,7 @@ on:
       - main
     paths:
       - ".devcontainer/**"
+      - "devcontainer/**"
 
 permissions:
   contents: read
