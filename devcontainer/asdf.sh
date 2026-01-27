@@ -58,6 +58,7 @@ done
 
 # Shared installation for asdf.
 if ! [[ "${ASDF_DATA_DIR}" == /home/* ]]; then
+  cp ~/.tool-versions "${ASDF_DATA_DIR}/tool-versions"
   chmod -R o+rw "${ASDF_DATA_DIR}"
 fi
 
