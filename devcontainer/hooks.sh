@@ -6,8 +6,8 @@ set -eo pipefail
 
 cat <<EOF >>/etc/bash.bashrc
 
-. ~/.asdf/asdf.sh
-. ~/.asdf/completions/asdf.bash
+. "\${ASDF_DATA_DIR:-~/.asdf}/asdf.sh"
+. "\${ASDF_DATA_DIR:-~/.asdf}/completions/asdf.bash"
 
 eval "\$(direnv hook bash)"
 

@@ -3,6 +3,8 @@
 ARG VARIANT="noble"
 FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
 
+ENV ASDF_DATA_DIR="/opt/asdf"
+
 # Install packages using the apt package manager.
 # A list of common packages will be installed along with any packages you list
 # here.

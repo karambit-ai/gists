@@ -18,12 +18,14 @@
 
 set -eo pipefail
 
-[[ ! -f "${HOME}/.asdf/asdf.sh" ]] && {
-  git clone https://github.com/asdf-vm/asdf ~/.asdf --branch v0.10.2
+ASDF_DATA_DIR="${ASDF_DATA_DIR:-~/.asdf}"
+
+[[ ! -f "${ASDF_DATA_DIR}/asdf.sh" ]] && {
+  git clone https://github.com/asdf-vm/asdf "${ASDF_DATA_DIR}" --branch v0.10.2
 }
 
 # shellcheck disable=1091
-. "${HOME}/.asdf/asdf.sh"
+. "${ASDF_DATA_DIR}/asdf.sh"
 
 # ---------------------------------------------------------------------------- #
 
@@ -53,5 +55,10 @@ while IFS= read -r line || [ -n "$line" ]; do
   asdf install "${name}" "${version}" || :
   asdf global "${name}" "${version}"
 done
+
+# Shared installation for asdf.
+if ! [[ "${ASDF_DATA_DIR}" == /home/* ]]; then
+  chmod -R o+rw "${ASDF_DATA_DIR}"
+fi
 
 # ---------------------------------------------------------------------------- #
