@@ -57,4 +57,6 @@ jobs:
       - name: Check asdf availability
         run: |
           gh repo view
-        shell: bash -ileo pipefail {0}
+        shell: bash -ieo pipefail {0}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
