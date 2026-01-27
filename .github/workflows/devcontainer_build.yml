@@ -40,3 +40,18 @@ jobs:
           cacheFrom: ghcr.io/${{ github.repository }}/devcontainer
           push: always
           configFile: .devcontainer/Ubuntu/devcontainer.json
+
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/devcontainer
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+      # Run using the runner user.
+      options: --user=1001
+
+    steps:
+      - name: Check asdf availability
+        run: |
+          gh repo view | tee
