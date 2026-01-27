@@ -25,7 +25,7 @@ dl() {
   if [[ -f "${backup}" ]]; then
     sha_backup="$(sha256sum "${2}" | awk '{print $1}')"
     sha_new="$(sha256sum "${backup}" | awk '{print $1}')"
-    [[ "${sha_backup}" == "${sha_new}" ]] && rm "${backup}"
+    [[ "${sha_backup}" == "${sha_new}" ]] && rm "${backup}" || :
   fi
 }
 
@@ -36,19 +36,7 @@ if ! command -v curl &>/dev/null; then
 fi
 
 # Create a .devcontainer directory if it doesn't exist.
-[[ ! -e .devcontainer/scripts ]] && mkdir -p .devcontainer/scripts
-
-# Download the devcontainer scripts and back up existing ones.
-curl -Ls https://api.github.com/repos/karambit-ai/gists/contents/devcontainer | jq -r '.[].path' |
-  while IFS= read -r remotepath || [ -n "${remotepath}" ]; do
-    file="$(basename "${remotepath}")"
-    localpath=".devcontainer/scripts/${file}"
-
-    dl "${remotepath}" "${localpath}"
-    if [[ "${file}" == *.sh ]]; then
-      chmod +x "${localpath}"
-    fi
-  done
+[[ ! -e .devcontainer ]] && mkdir -p .devcontainer
 
 # Download the devcontainer configuration and Dockerfile and backup existing
 # ones.
