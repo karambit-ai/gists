@@ -57,4 +57,5 @@ jobs:
       - name: Check asdf availability
         run: |
           gh repo view
-        shell: bash
+        # NB: The below adds --noprifle and --norc which we don't want.
+        # shell: bash
