@@ -34,19 +34,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push devcontainer image
-        if: ${{ github.event_name != 'workflow_dispatch' }}
         uses: devcontainers/ci@v0.3
         with:
           imageName: ghcr.io/${{ github.repository }}/devcontainer
           cacheFrom: ghcr.io/${{ github.repository }}/devcontainer
-          push: always
-          configFile: .devcontainer/Ubuntu/devcontainer.json
-
-      - name: Build and push devcontainer image (manual no-cache)
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        uses: devcontainers/ci@v0.3
-        with:
-          imageName: ghcr.io/${{ github.repository }}/devcontainer
+          noCache: ${{ github.event_name == 'workflow_dispatch' }}
           push: always
           configFile: .devcontainer/Ubuntu/devcontainer.json
 
