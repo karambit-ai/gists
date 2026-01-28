@@ -47,6 +47,7 @@ while IFS= read -r line || [ -n "$line" ]; do
 
   version="$(grep "${name}" "${HOME}/.tool-versions" 2>/dev/null | cut -d ' ' -f 2)" || :
   [[ -z "${version}" ]] && version="latest"
+  [[ "${name}" == "${version}" ]] && version="latest"
 
   if [[ -z "${source}" ]]; then
     asdf plugin add "${name}" || :
