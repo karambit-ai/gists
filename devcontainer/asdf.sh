@@ -43,6 +43,7 @@ while IFS= read -r line || [ -n "$line" ]; do
   source="${linevars[1]}"
 
   [[ -z "${name}" ]] && continue
+  [[ "${name}" == \#* ]] && continue
 
   version="$(grep "${name}" "${HOME}/.tool-versions" 2>/dev/null | cut -d ' ' -f 2)" || :
   [[ -z "${version}" ]] && version="latest"
