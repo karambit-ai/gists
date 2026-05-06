@@ -2,10 +2,7 @@
   "name": "Ubuntu",
   "build": {
     "context": "..",
-    "dockerfile": "Dockerfile",
-    "args": {
-      "VARIANT": "ubuntu-22.04"
-    }
+    "dockerfile": "Dockerfile"
   },
 
   # NB: Enables SSH into GitHub Codespaces.

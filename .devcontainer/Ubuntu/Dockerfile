@@ -1,7 +1,7 @@
 # syntax=docker.io/docker/dockerfile-upstream:1.4.3
 
-ARG VARIANT="noble"
-FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
+FROM mcr.microsoft.com/vscode/devcontainers/base:noble@sha256:7ee7da33a68d997971660d91ecc8372e55a38a777c3c6bd6808daf91928052db
+# https://mcr.microsoft.com/v2/vscode/devcontainers/base/tags/list
 
 ENV ASDF_DATA_DIR="/opt/asdf"
 
